@@ -83,7 +83,7 @@
       const line = `<polyline points="${rows.map((r, i) => `${x(i)},${y(r.queue)}`).join(' ')}" fill="none" stroke="${c.color}" stroke-width="2.7" stroke-linejoin="round" stroke-dasharray="${dashPatterns[ci]}"/>`;
       // Coincident observations stay at their exact coordinates; slight hit-target offsets
       // allow each value to be selected without altering the plotted data.
-      const points = rows.map((r, i) => `<g class="chart-point" tabindex="0" role="button" data-point="${c.id}|${r.time}" aria-label="${escape(c.name)}, ${escape(r.time)}, antrean sekitar ${r.queue} orang"><title>${escape(c.name)} · ${escape(r.time)} · sekitar ${r.queue} orang</title><circle class="point-target" cx="${x(i) + (ci - 2) * 5}" cy="${y(r.queue) + (ci - 2) * 5}" r="8" fill="transparent"/><circle class="visible-point" cx="${x(i)}" cy="${y(r.queue)}" r="4.6" fill="white" stroke="${c.color}" stroke-width="2.3" pointer-events="none"/></g>`).join('');
+      const points = rows.map((r, i) => `<g class="chart-point" tabindex="0" role="button" data-point="${c.id}|${r.time}" aria-label="${escape(c.name)}, ${escape(r.time)}, antrean sekitar ${r.queue} orang"><title>${escape(c.name)} · ${escape(r.time)} · sekitar ${r.queue} orang</title><circle class="point-target" cx="${x(i) + (ci - 2) * 5}" cy="${y(r.queue) + (ci - 2) * 5}" r="8" fill="transparent"/><circle class="visible-point" cx="${x(i)}" cy="${y(r.queue)}" r="4.6" fill="white" stroke="${c.color}" stroke-width="2.3"/></g>`).join('');
       return line + points;
     }).join('');
     $('#queue-chart').innerHTML = grid + labels + lines;
