@@ -22,7 +22,7 @@
       <a class="nav-link" href="#simulasi"><span data-icon="layers"></span>Simulasi prediksi</a>
       <a class="nav-link" href="#rancangan"><span data-icon="flow"></span>Rancangan AI</a>
     </nav>
-    <div class="sidebar-note"><span class="mini-tag">PROTOTIPE AKADEMIS</span><p>Informasi untuk dibandingkan.<br>Keputusan ada di mahasiswa.</p><span class="sidebar-sub">Tugas mata kuliah<br>Artificial Intelligence</span></div>
+    <div class="sidebar-note"><span class="mini-tag">PROTOTYPE AKADEMIS</span></div>
   </aside>
   <div class="workspace">
     <header class="topbar"><span>Dashboard kantin kampus</span><span class="header-label"><span data-icon="book"></span>Prototipe akademis</span></header>
@@ -31,15 +31,15 @@
         <div class="intro"><div><p class="eyebrow">OBSERVASI KONDISI KANTIN</p><h1 id="dashboard-title">Smart Canteen Campus</h1><p class="lead">Bandingkan kondisi lima kantin sebelum menentukan tempat makan Anda.</p></div><span class="data-label">Data observasi awal</span></div>
         <div class="overview" aria-label="Cakupan observasi">
           <div><span class="overview-icon" data-icon="canteen"></span><p><strong>5</strong><span>Kantin kampus</span></p></div>
-          <div><span class="overview-icon" data-icon="clock"></span><p><strong>5</strong><span>Waktu pengamatan</span></p></div>
+          <div><span class="overview-icon" data-icon="clock"></span><p><strong>5</strong><span>Waktu pengamatan <br>(pukul waktu)</span></p></div>
           <div><span class="overview-icon" data-icon="clipboard"></span><p><strong>25</strong><span>Catatan observasi</span></p></div>
           <div class="overview-status"><span data-icon="layers"></span><p><strong>Tahap rancangan</strong><span>Model belum dilatih</span></p></div>
         </div>
-        <div class="section-heading"><div><h2>Kondisi kantin</h2><p>Catatan observasi pada waktu yang dipilih.</p></div><div class="time-context"><span data-icon="clock"></span>Waktu observasi <strong id="selected-time">11.50</strong></div></div>
+        <div class="section-heading"><div><h2>Kondisi kantin</h2></div><div class="time-context"><span data-icon="clock"></span>Waktu observasi <strong id="selected-time">11.50</strong></div></div>
         <div class="time-selector"><span>Pilih waktu pengamatan</span><div id="time-buttons" class="segmented" role="group" aria-label="Pilih waktu pengamatan"></div></div>
         <div id="canteen-cards" class="canteen-grid" aria-live="polite" aria-atomic="true"></div>
-        <div class="capacity-note"><span data-icon="info"></span><p><strong>Baca dalam konteks kapasitas.</strong> Kantel berupa kiosk kecil dengan sedikit meja dan bangku. Kapasitas numerik tiap kantin belum diukur; jumlah antrean saja belum cukup untuk membandingkan kepadatan relatif.</p></div>
-        <p class="source-note">Kondisi dan meja mengikuti catatan asli. Angka antrean merupakan perkiraan. “Mulai ramai” dan “Ramai sedang” adalah catatan observasi, bukan keluaran model.</p>
+      
+        
       </section>
       <section id="observasi" aria-labelledby="observasi-title">
         <div class="section-heading"><div><p class="eyebrow">POLA DARI OBSERVASI AWAL</p><h2 id="observasi-title">Grafik &amp; tabel observasi</h2></div><span class="section-index">01 / OBSERVASI</span></div>
@@ -47,7 +47,7 @@
           <div id="chart-controls" class="chart-controls" role="group" aria-label="Garis kantin yang ditampilkan"></div>
           <p class="axis-label">Perkiraan jumlah antrean</p><div class="chart-scroll"><svg id="queue-chart" viewBox="0 0 960 295" role="group" aria-label="Grafik perubahan perkiraan antrean dari 11.20 sampai 12.40"></svg></div>
           <p class="chart-axis-x">Waktu pengamatan</p><div id="chart-readout" class="chart-readout" role="status">Arahkan kursor, ketuk, atau fokuskan titik grafik untuk melihat antrean.</div>
-          <p class="source-note">Angka antrean merupakan perkiraan; perbandingan kepadatan relatif juga memerlukan informasi kapasitas tiap kantin.</p>
+          
         </div>
         <div class="panel table-panel"><div class="panel-heading"><div><h3>Tabel observasi asli</h3><p id="row-count" aria-live="polite">25 catatan observasi</p></div><label class="filter-label">Filter kantin<select id="canteen-filter"><option value="all">Semua kantin</option></select></label></div>
           <div class="table-scroll" tabindex="0" role="region" aria-label="Tabel observasi, geser untuk melihat seluruh kolom"><table><caption class="sr-only">Data observasi awal semua kantin</caption><thead><tr><th scope="col">Waktu</th><th scope="col">Kantin</th><th scope="col">Kondisi</th><th scope="col">Antrean sekitar</th><th scope="col">Meja tersedia</th></tr></thead><tbody id="observation-rows"></tbody></table></div>
@@ -67,7 +67,7 @@
         <ol class="ai-flow" aria-label="Alur rancangan sistem AI"><li><span>01</span>Data kantin</li><li><span>02</span>Data historis<br>berlabel</li><li><span>03</span>Supervised Learning<br>Classification</li><li><span>04</span>Prediksi kategori</li><li><span>05</span>Dashboard</li><li><span>06</span>Mahasiswa<br>membandingkan kantin</li></ol>
         <div class="variables-grid"><div class="panel variable-panel"><span class="availability available">Sudah tersedia pada observasi awal</span><h3>Dasar informasi saat ini</h3><ul><li><strong>Waktu</strong><span>Lima waktu pengamatan; hari belum tersedia.</span></li><li><strong>Identitas kantin</strong><span>Kansip, Kandok, Kantin TN, Kantek, dan Kantel.</span></li><li><strong>Jumlah antrean</strong><span>Perkiraan, bukan hitungan presisi.</span></li><li><strong>Ketersediaan meja</strong><span>Catatan Banyak, Sedang, atau Sedikit.</span></li></ul></div>
           <div class="panel variable-panel"><span class="availability needed">Masih perlu dikumpulkan</span><h3>Untuk pengembangan model</h3><ul><li><strong>Hari dan riwayat yang berulang</strong><span>Pengamatan lintas hari untuk data historis.</span></li><li><strong>Perkiraan jumlah pengunjung</strong><span>Berbeda dari jumlah orang yang mengantre.</span></li><li><strong>Jumlah pesanan aktif</strong><span>Pesanan yang sedang diproses.</span></li><li><strong>Keterisian meja</strong><span>Pengukuran tambahan di luar catatan ketersediaan.</span></li><li><strong>Kepadatan sebelumnya</strong><span>Riwayat dengan label yang konsisten.</span></li><li><strong>Kapasitas relatif kantin</strong><span>Perlu pengukuran kapasitas tiap kantin.</span></li></ul></div></div>
-        <div class="ai-note"><h3>Label perlu mempertimbangkan kapasitas</h3><p>Aturan label Sepi, Sedang, Ramai, dan Sangat Ramai perlu dirancang berdasarkan kapasitas masing-masing kantin. Antrean yang sama dapat memiliki makna berbeda pada kantin besar dan kiosk kecil seperti Kantel. Catatan kondisi awal belum merupakan target klasifikasi yang tervalidasi.</p><p>Setelah data historis berlabel terkumpul, model perlu dilatih dan dievaluasi pada data terpisah sebelum prediksi aktual ditampilkan. Dashboard diharapkan membantu mahasiswa membandingkan kondisi; manfaatnya terhadap antrean masih perlu diuji.</p></div>
+
       </section>
     </main>
     <footer><span>Smart Canteen Campus</span><p>Prototipe akademis · Observasi awal · Model belum dilatih</p></footer>
